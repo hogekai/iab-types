@@ -1,6 +1,6 @@
 {
   "name": "iab-openrtb",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "TypeScript definitions for IAB Tech Lab's OpenRTB (Open Real Time Bidding)",
   "scripts": {
     "build": "tsup",
@@ -22,12 +22,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hogekai/types-iab-openrtb.git"
+    "url": "https://github.com/hogekai/iab-types.git",
+    "directory": "packages/types-iab-openrtb"
   },
   "bugs": {
-    "url": "https://github.com/hogekai/types-iab-openrtb/issues"
+    "url": "https://github.com/hogekai/iab-types.git"
   },
-  "homepage": "https://github.com/hogekai/types-iab-openrtb#readme",
+  "homepage": "https://github.com/hogekai/iab-types.git",
   "license": "MIT",
   "files": [
     "dist/",
