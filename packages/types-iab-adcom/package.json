@@ -16,6 +16,28 @@
     "advertising",
     "programmatic"
   ],
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    },
+    "./media": {
+      "import": "./src/media/index.ts",
+      "require": "./src/media/index.ts"
+    },
+    "./context": {
+      "import": "./src/context/index.ts",
+      "require": "./src/context/index.ts"
+    },
+    "./placement": {
+      "import": "./src/placement/index.ts",
+      "require": "./src/placement/index.ts"
+    },
+    "./enum": {
+      "import": "./src/enum/index.ts",
+      "require": "./src/enum/index.ts"
+    }
+  },
   "author": {
     "name": "Kai Miyamoto",
     "url": "https://github.com/hogekai"
