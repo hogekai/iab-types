@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "ES2015",     
+    "module": "ES2015",  
+    "declaration": true,  
+    "preserveConstEnums": true, 
+    "strict": true,
+    "noEmit": true,
+    "moduleResolution": "bundler",
+  },
+  "include": ["src/**/*"], 
+  "exclude": ["node_modules", "dist"] 
+}

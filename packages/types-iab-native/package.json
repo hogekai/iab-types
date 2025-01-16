@@ -1,0 +1,53 @@
+{
+  "name": "iab-native",
+  "version": "0.5.2",
+  "description": "TypeScript definitions fro IAB Tech Lab`s Native Ad",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "Native",
+    "IAB Tech Lab",
+    "typescript",
+    "types",
+    "definitions",
+    "advertising",
+    "programmatic"
+  ],
+  "author": {
+    "name": "Kai Miyamoto",
+    "url": "https://github.com/hogekai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hogekai/types-iab-native.git"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./v12": {
+        "import": "./dist/v12/index.mjs",
+        "require": "./dist/v12/index.js",
+        "types": "./dist/v12/index.d.ts"
+      }
+    }
+  }
+}
