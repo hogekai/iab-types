@@ -1,6 +1,6 @@
 {
   "name": "iab-adcom",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "TypeScript definitions for IAB Tech Lab's AdCOM (Advertising Common Object Model)",
   "scripts": {
     "build": "tsup && tsc",
