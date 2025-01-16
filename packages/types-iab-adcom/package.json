@@ -1,0 +1,98 @@
+{
+  "name": "iab-adcom",
+  "version": "0.2.4",
+  "description": "TypeScript definitions for IAB Tech Lab's AdCOM (Advertising Common Object Model)",
+  "import": "./dist/index.js",
+  "require": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./media": {
+      "import": "./src/media/index.d.ts",
+      "require": "./src/media/index.d.ts",
+      "types": "./src/media/index.d.ts"
+    },
+    "./context": {
+      "import": "./src/context/index.ts",
+      "require": "./src/context/index.ts",
+      "types": "./src/context/index.ts"
+    },
+    "./placement": {
+      "import": "./src/placement/index.ts",
+      "require": "./src/placement/index.ts",
+      "types": "./src/placement/index.ts"
+    },
+    "./enum": {
+      "import": "./src/enum/index.ts",
+      "require": "./src/enum/index.ts",
+      "types": "./src/enum/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AdCOM",
+    "IAB Tech Lab",
+    "OpenRTB",
+    "typescript",
+    "types",
+    "definitions",
+    "advertising",
+    "programmatic"
+  ],
+  "author": {
+    "name": "Kai Miyamoto",
+    "url": "https://github.com/hogekai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hogekai/types-iab-adcom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hogekai/types-iab-adcom/issues"
+  },
+  "homepage": "https://github.com/hogekai/types-iab-adcom#readme",
+  "license": "MIT",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./media": {
+        "import": "./dist/media/index.d.ts",
+        "require": "./dist/media/index.d.ts",
+        "types": "./dist/media/index.d.ts"
+      },
+      "./context": {
+        "import": "./dist/context/index.d.ts",
+        "require": "./dist/context/index.d.ts",
+        "types": "./dist/context/index.d.ts"
+      },
+      "./placement": {
+        "import": "./dist/placement/index.d.ts",
+        "require": "./dist/placement/index.d.ts",
+        "types": "./dist/placement/index.d.ts"
+      },
+      "./enum": {
+        "import": "./dist/enum/index.js",
+        "require": "./dist/enum/index.js",
+        "types": "./dist/enum/index.d.ts"
+      }
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

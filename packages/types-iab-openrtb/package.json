@@ -1,0 +1,67 @@
+{
+  "name": "iab-openrtb",
+  "version": "0.4.1",
+  "description": "TypeScript definitions for IAB Tech Lab's OpenRTB (Open Real Time Bidding)",
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "OpenRTB",
+    "IAB Tech Lab",
+    "AdCOM",
+    "typescript",
+    "types",
+    "definitions",
+    "advertising",
+    "programmatic"
+  ],
+  "author": {
+    "name": "Kai Miyamoto",
+    "url": "https://github.com/hogekai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hogekai/types-iab-openrtb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hogekai/types-iab-openrtb/issues"
+  },
+  "homepage": "https://github.com/hogekai/types-iab-openrtb#readme",
+  "license": "MIT",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      "./v25": {
+        "import": "./dist/v25/index.mjs",
+        "require": "./dist/v25/index.js",
+        "types": "./dist/v25/index.d.ts"
+      },
+      "./v26": {
+        "import": "./dist/v26/index.mjs",
+        "require": "./dist/v26/index.js",
+        "types": "./dist/v26/index.d.ts"
+      },
+      "./v30": {
+        "import": "./dist/v30/index.mjs",
+        "require": "./dist/v30/index.js",
+        "types": "./dist/v30/index.d.ts"
+      }
+    }
+  },
+  "dependencies": {
+    "iab-adcom": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

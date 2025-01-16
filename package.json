@@ -1,0 +1,13 @@
+{
+  "name": "iab-types",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm -r build"
+  },
+  "keywords": [],
+  "author": "Kai Miyamoto",
+  "license": "MIT"
+}
