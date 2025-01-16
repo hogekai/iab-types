@@ -1,6 +1,6 @@
 {
   "name": "iab-native",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "TypeScript definitions fro IAB Tech Lab`s Native Ad",
   "scripts": {
     "build": "tsup"
@@ -21,8 +21,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hogekai/types-iab-native.git"
+    "url": "https://github.com/hogekai/iab-types.git",
+    "directory": "packages/types-iab-iab-native"
   },
+  "bugs": {
+    "url": "https://github.com/hogekai/iab-types.git"
+  },
+  "homepage": "https://github.com/hogekai/iab-types.git",
   "devDependencies": {
     "tsup": "^8.3.5",
     "typescript": "^5.7.3"

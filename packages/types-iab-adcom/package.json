@@ -1,6 +1,6 @@
 {
   "name": "iab-adcom",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "TypeScript definitions for IAB Tech Lab's AdCOM (Advertising Common Object Model)",
   "scripts": {
     "build": "tsup && tsc",
@@ -44,12 +44,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hogekai/types-iab-adcom.git"
+    "url": "https://github.com/hogekai/iab-types.git",
+    "directory": "packages/types-iab-adcom"
   },
   "bugs": {
-    "url": "https://github.com/hogekai/types-iab-adcom/issues"
+    "url": "https://github.com/hogekai/iab-types.git"
   },
-  "homepage": "https://github.com/hogekai/types-iab-adcom#readme",
+  "homepage": "https://github.com/hogekai/iab-types.git",
   "license": "MIT",
   "files": [
     "dist/",
