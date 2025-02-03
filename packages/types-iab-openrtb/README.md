@@ -66,4 +66,4 @@ MIT
 
 ## Contributing
 
-Issues and Pull Requests are welcome at our [GitHub repository](https://github.com/hogekai/types-iab-openrtb).
+Issues and Pull Requests are welcome at our [GitHub repository](https://github.com/hogekai/iab-types).

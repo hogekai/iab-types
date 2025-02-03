@@ -58,4 +58,4 @@ MIT
 
 ## Contributing
 
-Issues and pull requests are welcome at the [GitHub repository](https://github.com/hogekai/types-iab-adcom).
+Issues and pull requests are welcome at the [GitHub repository](https://github.com/hogekai/iab-types).
