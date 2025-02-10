@@ -7,6 +7,8 @@ import {
   APIFramework,
   AudioVideoCreativeSubtype,
   AuditStatusCode,
+  EventTrackingMethod,
+  EventType,
 } from "../enum";
 
 export interface Ad {
@@ -389,13 +391,13 @@ export interface Event {
    * Type of event to track
    * @minimum 0
    */
-  type: number;
+  type: EventType;
 
   /**
    * Method of tracking requested
    * @minimum 0
    */
-  method: number;
+  method: EventTrackingMethod;
 
   /**
    * APIs used by the tracker
