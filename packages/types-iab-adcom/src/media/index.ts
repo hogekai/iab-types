@@ -9,6 +9,7 @@ import {
   AuditStatusCode,
   EventTrackingMethod,
   EventType,
+  NativeDataAssetType,
 } from "../enum";
 
 export interface Ad {
@@ -378,7 +379,7 @@ export interface DataAsset {
    * Type of data asset
    * @minimum 0
    */
-  type?: number;
+  type?: NativeDataAssetType;
 
   /**
    * Optional vendor-specific extensions
