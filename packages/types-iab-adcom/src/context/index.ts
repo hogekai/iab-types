@@ -5,13 +5,13 @@
 import { AgentType, CategoryTaxonomy, DeviceType, DOOHVenueType, IPLocationService, LocationType } from "../enum";
 
 export interface Context {
-  site: Site;
-  app: App;
-  dooh: Dooh;
-  user: User;
-  device: Device;
-  regs: Regs;
-  restrictions: Restrictions;
+  site?: Site;
+  app?: App;
+  dooh?: Dooh;
+  user?: User;
+  device?: Device;
+  regs?: Regs;
+  restrictions?: Restrictions;
 }
 
 /**
