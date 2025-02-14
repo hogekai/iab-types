@@ -2,6 +2,7 @@ import { ContentContext } from "iab-adcom";
 import { Item, Source } from "./Request";
 import { Seatbid } from "./Response";
 import { NoBidReasonCode } from "./enum";
+import { Context } from "iab-adcom/context";
 
 export interface Openrtb {
   /**
@@ -111,7 +112,7 @@ export interface Request {
    * subtypes (i.e., Site, App, or Dooh), User, Device, Regs, Restrictions, and any objects subordinate
    * to these as specified by AdCOM.
    */
-  context?: ContentContext;
+  context?: Context;
 
   /**
    * Optional exchange-specific extensions.
