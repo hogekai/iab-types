@@ -10,6 +10,7 @@ import {
   EventTrackingMethod,
   EventType,
   NativeDataAssetType,
+  NativeImageAssetType,
 } from "../enum";
 
 export interface Ad {
@@ -337,7 +338,7 @@ export interface ImageAsset {
    * Type of image asset
    * @minimum 0
    */
-  type?: number;
+  type?: NativeImageAssetType;
 
   /**
    * Optional vendor-specific extensions
