@@ -1,6 +1,6 @@
 {
   "name": "iab-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript definitions for IAB Tech Lab's Native Ad",
   "scripts": {
     "build": "tsup"
