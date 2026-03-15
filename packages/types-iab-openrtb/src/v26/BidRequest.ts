@@ -30,6 +30,7 @@ import type {
   VideoPlacementSubtype,
   VolumeNormalizationMode,
 } from "iab-adcom";
+import type { BannerAdType } from "../v25/enum";
 
 /**
  * Describes the nature and behavior of the bid request source entity
@@ -143,7 +144,7 @@ export interface Banner {
   /** Exact height in DIPS */
   h?: number;
   /** Blocked banner ad types */
-  btype?: number[];
+  btype?: BannerAdType[];
   /** Blocked creative attributes */
   battr?: CreativeAttribute[];
   /** Ad position on screen */
