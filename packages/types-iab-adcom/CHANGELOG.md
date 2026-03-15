@@ -1,5 +1,16 @@
 # iab-adcom
 
+## 2.0.1
+
+### Patch Changes
+
+- fix(iab-adcom): Align type definitions with AdCOM v1.0 spec
+
+  - Widen `venue` to `DOOHVenueType | number` and `delay` to `StartDelayMode | number`
+  - Fix `ptype` to use `VideoPlacementType` instead of `VideoPlacementSubtype`
+  - Narrow `api` from `number[]` to `APIFramework[]`
+  - Add `@deprecated` annotation to `Content.genre`
+
 ## 2.0.0
 
 ### Major Changes

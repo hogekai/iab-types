@@ -1,5 +1,23 @@
 # iab-openrtb
 
+## 2.1.0
+
+### Minor Changes
+
+- fix(iab-openrtb): Align OpenRTB 2.5/2.6 types with spec
+
+  - Add `BannerAdType` enum and use it for `Banner.btype`
+  - Add missing fields to `Imp`: `audio`, `native`, `pmp`
+  - Add missing `bcat` field to `BidRequest`
+  - Fix `Content.producer` and `Content.data` to use proper types
+  - Fix `Banner.format` to use `Format[]`
+  - Widen `BidRequest.at` to `number`
+
+### Patch Changes
+
+- Updated dependencies
+  - iab-adcom@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
