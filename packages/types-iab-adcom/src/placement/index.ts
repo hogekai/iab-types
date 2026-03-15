@@ -25,7 +25,7 @@ import type {
   SizeUnit,
   SlotPosition,
   StartDelayMode,
-  VideoPlacementSubtype,
+  VideoPlacementType,
   VolumeNormalizationMode,
 } from "../enum";
 
@@ -488,7 +488,7 @@ export interface VideoPlacement {
    * List: Plcmt Subtype - Video
    * @minimum 0
    */
-  ptype?: VideoPlacementSubtype;
+  ptype?: VideoPlacementType;
 
   /**
    * Placement position on screen
@@ -502,7 +502,7 @@ export interface VideoPlacement {
    * List: Start Delay Mode
    * @minimum 0
    */
-  delay?: StartDelayMode;
+  delay?: StartDelayMode | number;
 
   /**
    * Indicates if the placement imposes ad skippability
@@ -554,7 +554,7 @@ export interface VideoPlacement {
    * List of supported APIs
    * List: API Framework
    */
-  api?: number[];
+  api?: APIFramework[];
 
   /**
    * Creative subtypes permitted
@@ -716,7 +716,7 @@ export interface AudioPlacement {
    * List: Start Delay Mode
    * @minimum 0
    */
-  delay?: StartDelayMode;
+  delay?: StartDelayMode | number;
 
   /**
    * Indicates if the placement imposes ad skippability

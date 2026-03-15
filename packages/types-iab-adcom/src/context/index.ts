@@ -242,7 +242,7 @@ export interface Dooh extends DistributionChannel {
   /**
    * Type of out-of-home venue
    */
-  venue?: DOOHVenueType;
+  venue?: DOOHVenueType | number;
 
   /**
    * Fixed location indicator
@@ -304,6 +304,7 @@ export interface Content {
 
   /**
    * Genre that best describes the content
+   * @deprecated Use genres instead.
    */
   genre?: string;
 
