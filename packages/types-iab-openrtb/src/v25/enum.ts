@@ -1,4 +1,16 @@
 /**
+ * OpenRTB 2.5 Banner Ad Types
+ * Defines the types of banner ad units
+ */
+export const BannerAdType = {
+  XHTML_TEXT_AD: 1,
+  XHTML_BANNER_AD: 2,
+  JAVASCRIPT_AD: 3,
+  IFRAME: 4,
+} as const;
+export type BannerAdType = (typeof BannerAdType)[keyof typeof BannerAdType];
+
+/**
  * OpenRTB 2.5 No-Bid Reason Codes
  * Signals why a bidder did not offer a bid for the impression
  */

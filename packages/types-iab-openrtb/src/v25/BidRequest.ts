@@ -20,6 +20,7 @@ import type {
   SlotPosition,
   VolumeNormalizationMode,
 } from "iab-adcom";
+import type { BannerAdType } from "./enum";
 
 /**
  * Describes the nature and behavior of the entity that is the source of the bid request
@@ -65,16 +66,13 @@ export interface Metric {
  */
 export interface Banner {
   /** Array of format objects representing the banner sizes permitted */
-  format?: Array<{
-    w: number;
-    h: number;
-  }>;
+  format?: Format[];
   /** Exact width in device independent pixels (DIPS) */
   w?: number;
   /** Exact height in device independent pixels (DIPS) */
   h?: number;
   /** Blocked banner ad types */
-  btype?: number[];
+  btype?: BannerAdType[];
   /** Blocked creative attributes */
   battr?: CreativeAttribute[];
   /** Ad position on screen */
@@ -179,6 +177,12 @@ export interface Imp {
   bidfloorcur?: string;
   /** Indicates the type of browser opened upon clicking the creative in an app */
   clickbrowser?: 0 | 1;
+  /** An Audio object; required if this impression is offered as an audio ad opportunity */
+  audio?: Audio;
+  /** A Native object; required if this impression is offered as a native ad opportunity */
+  native?: Native;
+  /** A Pmp object containing any private marketplace deals in effect for this impression */
+  pmp?: Pmp;
   /** Flag to indicate if the impression requires secure HTTPS URL creative assets and markup */
   secure?: 0 | 1;
   /** Array of exchange-specific names of supported iframe busters */
@@ -410,7 +414,7 @@ export interface Content {
   /** International Standard Recording Code */
   isrc?: string;
   /** Details about the content Producer */
-  producer?: Record<string, unknown>;
+  producer?: Producer;
   /** URL of the content */
   url?: string;
   /** Array of IAB content categories that describe the content producer */
@@ -438,7 +442,7 @@ export interface Content {
   /** Indicator of whether or not the content is embeddable */
   embeddable?: 0 | 1;
   /** Additional content data */
-  data?: Array<Record<string, unknown>>;
+  data?: Data[];
   /** Placeholder for exchange-specific extensions to OpenRTB */
   ext?: Record<string, unknown>;
 }

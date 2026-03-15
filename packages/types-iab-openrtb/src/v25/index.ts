@@ -43,7 +43,7 @@ export interface BidRequest {
    * Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
    * @default 2
    */
-  at?: 1 | 2;
+  at?: number;
 
   /**
    * Maximum time in milliseconds the exchange allows for bids to be received including Internet latency to avoid timeout. This value supersedes any a priori guidance from the exchange.
@@ -81,6 +81,11 @@ export interface BidRequest {
    * Omission implies no specific restrictions, but buyers would be advised to consider language attribute in the Device and/or Content objects if available.
    */
   wlang?: string[];
+
+  /**
+   * Blocked advertiser categories using the IAB content categories. Refer to List 5.1.
+   */
+  bcat?: string[];
 
   /**
    * Block list of advertisers by their domains (e.g., "ford.com").
