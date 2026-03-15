@@ -1,6 +1,6 @@
-# types-iab-native
+# iab-native
 
-TypeScript type definitions for IAB Tech Lab`s Native Ad
+TypeScript type definitions for IAB Tech Lab's Native Ad
 
 ## Overview
 
