@@ -2,13 +2,13 @@ Pre-commit release preparation for iab-types monorepo (changesets).
 
 ## Steps
 
-1. **Diff analysis**: Run `git diff --cached` and `git diff` to understand all staged and unstaged changes since the last commit. Check for pending changesets in `.changeset/`.
+1. **Change analysis**: Find the last release commit (`chore(release):` で始まるコミット) and analyze all commits since then using `git log` and `git diff`. Identify which packages (`packages/types-iab-adcom`, `packages/types-iab-openrtb`, `packages/types-iab-native`) have changes. Also check for any pending unstaged/staged changes with `git diff` and `git diff --cached`.
 
-2. **Changeset check**: If there are no changesets yet for the current changes, run `npx changeset` interactively or create the changeset file manually based on the diff analysis. Determine which packages are affected and the appropriate bump level:
+2. **Changeset creation**: Based on the commit history analysis, create changeset files manually in `.changeset/` for each affected package. Determine the appropriate bump level:
    - **patch**: bug fixes, documentation updates, internal refactors with no API surface change
    - **minor**: new fields added to interfaces (backward-compatible additions)
    - **major**: breaking changes — removed/renamed fields, type changes, dropped exports
-   Present your reasoning and the proposed bumps. Ask for confirmation before proceeding.
+   Present your reasoning (listing the relevant commits) and the proposed bumps. Ask for confirmation before proceeding.
 
 3. **Version**: Run `npx changeset version` to consume changesets and bump `package.json` versions + update `CHANGELOG.md` for each affected package.
 
@@ -27,6 +27,6 @@ Pre-commit release preparation for iab-types monorepo (changesets).
 10. **Summary**: Report the final state — versions, changelog entries, tags, and lint/typecheck/test/build results. Do NOT push — that's the user's next step.
 
 ## Notes
-- If there are no meaningful changes (working tree clean, nothing staged, no pending changesets), say so and stop.
+- If there are no changes since the last release commit, say so and stop.
 - The user may pass an argument to override the bump level, e.g. `/prep-release minor`.
 - Verify type definitions against specs in `specs/` if the changes involve type modifications.
