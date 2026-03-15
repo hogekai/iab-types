@@ -1,8 +1,8 @@
-import {
+import type {
   DataAssetType,
-  ImageAssetType,
-  EventType,
   EventTrackingMethod,
+  EventType,
+  ImageAssetType,
 } from "./enum";
 
 /**
@@ -70,7 +70,7 @@ export interface NativeResponse {
 }
 
 /**
- * Asset Response 
+ * Asset Response
  * Corresponds to the Asset  in the request
  * Note: only one of {title,img,video,data} should be present in each object
  */
@@ -110,7 +110,7 @@ export interface AssetResponse {
 }
 
 /**
- * Title Response 
+ * Title Response
  */
 export interface TitleResponse {
   /** The text associated with the text element */
@@ -127,7 +127,7 @@ export interface TitleResponse {
 }
 
 /**
- * Image Response 
+ * Image Response
  */
 export interface ImageResponse {
   /**
@@ -156,7 +156,7 @@ export interface ImageResponse {
 }
 
 /**
- * Data Response 
+ * Data Response
  * Used for all miscellaneous elements of the native unit
  */
 export interface DataResponse {
@@ -183,7 +183,7 @@ export interface DataResponse {
 }
 
 /**
- * Video Response 
+ * Video Response
  * Contains a conforming VAST tag as a value
  */
 export interface VideoResponse {
@@ -192,7 +192,7 @@ export interface VideoResponse {
 }
 
 /**
- * Link Response 
+ * Link Response
  * Used for 'call to action' assets, or other links from the Native ad
  */
 export interface LinkResponse {
@@ -210,7 +210,7 @@ export interface LinkResponse {
 }
 
 /**
- * Event Tracker Response 
+ * Event Tracker Response
  * Specifies the types of events the bidder wishes to track and the URLs/information to track them
  */
 export interface EventTrackerResponse {

@@ -3,10 +3,11 @@
  * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#mediaobjects
  */
 
-import {
+import type {
   APIFramework,
   AudioVideoCreativeSubtype,
   AuditStatusCode,
+  DisplayCreativeSubtype,
   EventTrackingMethod,
   EventType,
   NativeDataAssetType,
@@ -125,13 +126,13 @@ export interface Display {
    * API required by the ad if applicable.
    * @description Array of API framework IDs
    */
-  api?: APIFramework;
+  api?: APIFramework[];
 
   /**
    * Subtype of display creative.
    * @description Creative subtype ID for display ads
    */
-  ctype?: number;
+  ctype?: DisplayCreativeSubtype;
 
   /**
    * Absolute width of the creative in device independent pixels (DIPS)

@@ -8,6 +8,7 @@ export default defineConfig({
     "./src/index.ts",
     "./src/context/index.ts",
     "./src/enum/index.ts",
+    "./src/media/index.ts",
     "./src/placement/index.ts",
   ],
 });

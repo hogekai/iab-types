@@ -1,5 +1,5 @@
-import { Placement } from "iab-adcom/placement";
-import { SupplyChain } from "../v26/BidRequest";
+import type { Placement } from "iab-adcom/placement";
+import type { SupplyChain } from "../v26/BidRequest";
 
 /**
  * Carries data about the source of the transaction

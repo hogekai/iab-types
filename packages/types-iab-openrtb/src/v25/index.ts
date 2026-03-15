@@ -1,6 +1,6 @@
-import { App, Device, Imp, Regs, Site, Source, User } from "./BidRequest";
-import { SeatBid } from "./BidResponse";
-import { NoBidReasonCode } from "./enum";
+import type { App, Device, Imp, Regs, Site, Source, User } from "./BidRequest";
+import type { SeatBid } from "./BidResponse";
+import type { NoBidReasonCode } from "./enum";
 
 export interface BidRequest {
   /**
@@ -148,6 +148,6 @@ export interface BidResponse {
   ext?: Record<string, unknown>;
 }
 
-export * from "./enum";
 export * from "./BidRequest";
 export * from "./BidResponse";
+export * from "./enum";

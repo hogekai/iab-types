@@ -2,12 +2,21 @@
   "name": "iab-types",
   "version": "0.0.0",
   "private": true,
-  "description": "",
-  "main": "index.js",
+  "description": "TypeScript type definitions for IAB Tech Lab specifications (AdCOM, OpenRTB, Native)",
   "scripts": {
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r --parallel exec tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "Kai Miyamoto",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.7",
+    "@changesets/cli": "^2.30.0",
+    "vitest": "^4.1.0"
+  }
 }

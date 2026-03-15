@@ -1,33 +1,35 @@
-import { CreativeAttribute, DOOHVenueType } from "iab-adcom";
-import { DeliveryMethod } from "iab-adcom";
-import { APIFramework } from "iab-adcom";
-import { PodDeduplicationSetting } from "iab-adcom";
-import { CompanionType } from "iab-adcom";
-import { PlacementPosition } from "iab-adcom";
-import { SlotPosition } from "iab-adcom";
-import { PlaybackCessationMode } from "iab-adcom";
-import { PlaybackMethod } from "iab-adcom";
-import { AudioVideoCreativeSubtype } from "iab-adcom";
-import { LinearityMode } from "iab-adcom";
-import { ContentContext } from "iab-adcom";
-import { ConnectionType } from "iab-adcom";
-import { IPLocationService } from "iab-adcom";
-import { MediaRating } from "iab-adcom";
-import { LocationType } from "iab-adcom";
-import { DeviceType } from "iab-adcom";
-import { ExpandableDirection } from "iab-adcom";
-import { VideoPlacementSubtype } from "iab-adcom";
-import { StartDelayMode } from "iab-adcom";
-import { FeedType } from "iab-adcom";
-import { VolumeNormalizationMode } from "iab-adcom";
-import { ProductionQuality } from "iab-adcom";
-import { DOOHVenueTaxonomy } from "iab-adcom";
-import { AutoRefreshTrigger } from "iab-adcom";
-import { CategoryTaxonomy } from "iab-adcom";
-import { AgentType } from "iab-adcom";
-import { IDMatchMethod } from "iab-adcom";
-import { UserAgentSource } from "iab-adcom";
-import { DOOHMultiplierMeasurementSourceType } from "iab-adcom";
+import type {
+  AgentType,
+  APIFramework,
+  AudioVideoCreativeSubtype,
+  AutoRefreshTrigger,
+  CategoryTaxonomy,
+  CompanionType,
+  ConnectionType,
+  ContentContext,
+  CreativeAttribute,
+  DeliveryMethod,
+  DeviceType,
+  DOOHMultiplierMeasurementSourceType,
+  DOOHVenueTaxonomy,
+  ExpandableDirection,
+  FeedType,
+  IDMatchMethod,
+  IPLocationService,
+  LinearityMode,
+  LocationType,
+  MediaRating,
+  PlacementPosition,
+  PlaybackCessationMode,
+  PlaybackMethod,
+  PodDeduplicationSetting,
+  ProductionQuality,
+  SlotPosition,
+  StartDelayMode,
+  UserAgentSource,
+  VideoPlacementSubtype,
+  VolumeNormalizationMode,
+} from "iab-adcom";
 
 /**
  * Describes the nature and behavior of the bid request source entity
@@ -106,11 +108,11 @@ export interface Imp {
   /** Advisory time between auction and impression */
   exp?: number;
   /** Impression quantity multiplier */
-  qty?: Record<string, unknown>;
+  qty?: Qty;
   /** Estimated fulfillment timestamp */
   dt?: number;
   /** Auto-refresh details */
-  refresh?: Record<string, unknown>;
+  refresh?: Refresh;
   /** Placeholder for exchange-specific extensions */
   ext?: Record<string, unknown>;
 }
@@ -231,7 +233,7 @@ export interface Video {
   /** Pod deduplication settings */
   poddedupe?: PodDeduplicationSetting[];
   /** Floor prices for various durations */
-  durfloors?: Array<Record<string, unknown>>;
+  durfloors?: DurFloors[];
   /** Placeholder for exchange-specific extensions */
   ext?: Record<string, unknown>;
 }
@@ -287,7 +289,7 @@ export interface Audio {
   /** Volume normalization mode */
   nvol?: VolumeNormalizationMode;
   /** Floor prices for various durations */
-  durfloors?: Array<Record<string, unknown>>;
+  durfloors?: DurFloors[];
   /** Placeholder for exchange-specific extensions */
   ext?: Record<string, unknown>;
 }
@@ -479,7 +481,7 @@ export interface Deal {
   /** Minimum CPM per second */
   mincpmpersec?: number;
   /** Floor prices by duration */
-  durfloors?: Array<Record<string, unknown>>;
+  durfloors?: DurFloors[];
   /** Placeholder for exchange-specific extensions */
   ext?: Record<string, unknown>;
 }
@@ -515,7 +517,7 @@ export interface Site {
   /** Publisher details */
   publisher?: Publisher;
   /** Content details */
-  content?: Record<string, unknown>;
+  content?: Content;
   /** Comma separated keywords */
   keywords?: string;
   /** Array of keywords */
@@ -557,7 +559,7 @@ export interface App {
   /** Publisher details */
   publisher?: Publisher;
   /** Content details */
-  content?: Record<string, unknown>;
+  content?: Content;
   /** Comma separated keywords */
   keywords?: string;
   /** Array of keywords */
@@ -640,6 +642,10 @@ export interface Content {
   language?: string;
   /** Content language (IETF BCP 47) */
   langb?: string;
+  /** Genre IDs describing the content */
+  genres?: string[];
+  /** Taxonomy in use for genres attribute; default Content Taxonomy 3.1 */
+  gtax?: number;
   /** Embeddable content flag */
   embeddable?: 0 | 1;
   /** Additional data */
@@ -768,8 +774,10 @@ export interface UID {
 export interface BrandVersion {
   /** Brand identifier */
   brand: string;
-  /** Version string */
-  version: string;
+  /** Sequence of version components */
+  version?: string[];
+  /** Extension field */
+  ext?: Record<string, unknown>;
 }
 
 /**
@@ -804,6 +812,8 @@ export interface Data {
   name?: string;
   /** Array of data segments */
   segment?: Segment[];
+  /** Array of Extended Content IDs */
+  cids?: string[];
   /** Extension field */
   ext?: Record<string, unknown>;
 }
@@ -846,8 +856,8 @@ export interface DOOH {
   name?: string;
   /** Out-of-home venue type */
   venuetype?: string[];
-  /** 
-   * Venue taxonomy in use 
+  /**
+   * Venue taxonomy in use
    * @default 1
    **/
   venuetypetax?: DOOHVenueTaxonomy;

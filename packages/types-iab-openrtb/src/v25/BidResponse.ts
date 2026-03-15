@@ -1,6 +1,9 @@
-import { AudioVideoCreativeSubtype } from 'iab-adcom';
-import { APIFramework } from 'iab-adcom';
-import { CreativeAttribute } from 'iab-adcom';
+import type {
+  APIFramework,
+  AudioVideoCreativeSubtype,
+  CreativeAttribute,
+  MediaRating,
+} from "iab-adcom";
 
 /**
  * Represents a bid from a specific bidder seat in response to a bid request
@@ -59,7 +62,7 @@ export interface Bid {
   /** Video response protocol of the markup if applicable */
   protocol?: AudioVideoCreativeSubtype;
   /** Creative media rating per IQG guidelines */
-  qagmediarating?: ImageSmoothingQuality;
+  qagmediarating?: MediaRating;
   /** Language of the creative using ISO-639-1-alpha-2 */
   language?: string;
   /** Reference to the deal.id from the bid request */

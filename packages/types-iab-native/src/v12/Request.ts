@@ -1,4 +1,4 @@
-import {
+import type {
   ContextSubType,
   ContextType,
   DataAssetType,
@@ -157,7 +157,7 @@ export interface Asset {
 }
 
 /**
- * Title Request 
+ * Title Request
  * To be used for title element of the Native ad
  */
 export interface TitleRequest {
@@ -174,7 +174,7 @@ export interface TitleRequest {
 }
 
 /**
- * Image Request 
+ * Image Request
  * To be used for all image elements of the Native ad such as Icons, Main Image, etc.
  */
 export interface ImageRequest {
@@ -221,7 +221,7 @@ export interface ImageRequest {
 }
 
 /**
- * Video Request 
+ * Video Request
  * To be used for all video elements supported in the Native Ad.
  * Corresponds to the Video object of OpenRTB.
  */
@@ -255,7 +255,7 @@ export interface VideoRequest {
 }
 
 /**
- * Data Request 
+ * Data Request
  * To be used for all non-core elements of the native unit such as
  * Brand Name, Ratings, Review Count, Stars, Download count, descriptions etc.
  */

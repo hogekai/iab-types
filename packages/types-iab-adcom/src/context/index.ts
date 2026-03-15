@@ -2,7 +2,15 @@
  * This group of objects represent concepts that are interacting, presenting, enclosing, or are otherwise relating to the world in which impressions live. These include the user, their device, their location, the channel (e.g., site, app, digital out-of-home) with which they are interacting, the channel's publisher, its content, and any regulations that are in effect (e.g., COPPA, GDPR).
  * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#context-objects-
  */
-import { AgentType, CategoryTaxonomy, DeviceType, DOOHVenueType, IPLocationService, LocationType } from "../enum";
+import type {
+  AgentType,
+  CategoryTaxonomy,
+  DeviceType,
+  DOOHVenueType,
+  IDMatchMethod,
+  IPLocationService,
+  LocationType,
+} from "../enum";
 
 export interface Context {
   site?: Site;
@@ -300,6 +308,17 @@ export interface Content {
   genre?: string;
 
   /**
+   * Array of genre IDs describing the content, using IDs from the taxonomy indicated in gtax
+   */
+  genres?: string[];
+
+  /**
+   * The taxonomy in use for the genres attribute
+   * @default 9
+   */
+  gtax?: number;
+
+  /**
    * Album to which the content belongs
    */
   album?: string;
@@ -529,6 +548,11 @@ export interface Data {
    * Array of data segments
    */
   segment?: Segment[];
+
+  /**
+   * Array of Extended Content IDs
+   */
+  cids?: string[];
 
   /**
    * Optional vendor-specific extensions
@@ -924,6 +948,21 @@ export interface ExtendedIdentifier {
   uids?: ExtendedIdentifierUID[];
 
   /**
+   * Domain of the entity that adds the ID into the bid stream
+   */
+  inserter?: string;
+
+  /**
+   * Domain of the entity responsible for matching or resolving the ID
+   */
+  matcher?: string;
+
+  /**
+   * ID match method used
+   */
+  mm?: IDMatchMethod;
+
+  /**
    * Optional vendor-specific extensions
    */
   ext?: Record<string, unknown>;
@@ -968,6 +1007,16 @@ export interface Regs {
   gdpr?: 0 | 1;
 
   /**
+   * Global Privacy Platform consent string
+   */
+  gpp?: string;
+
+  /**
+   * Array of applicable GPP section IDs
+   */
+  gpp_sid?: number[];
+
+  /**
    * Optional vendor-specific extensions
    */
   ext?: Record<string, unknown>;
@@ -987,6 +1036,11 @@ export interface Restrictions {
    * @default 2
    */
   cattax?: number;
+
+  /**
+   * Allow list of content categories using IDs from the taxonomy indicated in cattax
+   */
+  acat?: string[];
 
   /**
    * Block list of advertisers by their domains (e.g., "ford.com")

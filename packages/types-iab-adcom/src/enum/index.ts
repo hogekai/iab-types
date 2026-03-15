@@ -88,6 +88,8 @@ export const CategoryTaxonomy = {
   CONTENT_TAXONOMY_3_0: 7,
   /** IAB Tech Lab Ad Product Taxonomy 2.0 */
   AD_PRODUCT_TAXONOMY_2_0: 8,
+  /** IAB Tech Lab Content Taxonomy 3.1 */
+  CONTENT_TAXONOMY_3_1: 9,
 } as const;
 export type CategoryTaxonomy =
   (typeof CategoryTaxonomy)[keyof typeof CategoryTaxonomy];
@@ -274,7 +276,7 @@ export const DeliveryMethod = {
   PROGRESSIVE: 2,
   /** Download delivery */
   DOWNLOAD: 3,
-};
+} as const;
 export type DeliveryMethod =
   (typeof DeliveryMethod)[keyof typeof DeliveryMethod];
 
@@ -607,6 +609,10 @@ export const IPLocationService = {
   MAXMIND: 3,
   /** NetAcuity (Digital Element) */
   NETACUITY: 4,
+  /** 51Degrees (High Confidence) */
+  FIFTYONE_DEGREES_HIGH: 511,
+  /** 51Degrees (Medium Confidence) */
+  FIFTYONE_DEGREES_MEDIUM: 512,
 } as const;
 export type IPLocationService =
   (typeof IPLocationService)[keyof typeof IPLocationService];
@@ -864,6 +870,8 @@ export const PodDeduplicationSetting = {
   BY_CREATIVE_ID: 3,
   /** Deduplicated on mediafile URL */
   BY_MEDIAFILE_URL: 4,
+  /** No deduplication */
+  NONE: 5,
 } as const;
 export type PodDeduplicationSetting =
   (typeof PodDeduplicationSetting)[keyof typeof PodDeduplicationSetting];

@@ -1,8 +1,11 @@
-import { AudioVideoCreativeSubtype } from "iab-adcom";
-import { SlotPosition } from "iab-adcom";
-import { MediaRating } from "iab-adcom";
-import { APIFramework } from "iab-adcom";
-import { CategoryTaxonomy, CreativeAttribute } from "iab-adcom";
+import type {
+  APIFramework,
+  AudioVideoCreativeSubtype,
+  CategoryTaxonomy,
+  CreativeAttribute,
+  MediaRating,
+  SlotPosition,
+} from "iab-adcom";
 
 /**
  * Represents the type of creative markup

@@ -1,23 +1,25 @@
-import { ExpandableDirection } from "iab-adcom";
-import { AudioVideoCreativeSubtype } from "iab-adcom";
-import { PlaybackMethod } from "iab-adcom";
-import { DeliveryMethod } from "iab-adcom";
-import { CompanionType } from "iab-adcom";
-import { ConnectionType } from "iab-adcom";
-import { IPLocationService } from "iab-adcom";
-import { VolumeNormalizationMode } from "iab-adcom";
-import { ContentContext } from "iab-adcom";
-import { MediaRating } from "iab-adcom";
-import { ProductionQuality } from "iab-adcom";
-import { FeedType } from "iab-adcom";
-import { LocationType } from "iab-adcom";
-import { DeviceType } from "iab-adcom";
-import { PlacementPosition } from "iab-adcom";
-import { PlaybackCessationMode } from "iab-adcom";
-import { LinearityMode } from "iab-adcom";
-import { APIFramework } from "iab-adcom";
-import { SlotPosition } from "iab-adcom";
-import { CreativeAttribute } from "iab-adcom";
+import type {
+  APIFramework,
+  AudioVideoCreativeSubtype,
+  CompanionType,
+  ConnectionType,
+  ContentContext,
+  CreativeAttribute,
+  DeliveryMethod,
+  DeviceType,
+  ExpandableDirection,
+  FeedType,
+  IPLocationService,
+  LinearityMode,
+  LocationType,
+  MediaRating,
+  PlacementPosition,
+  PlaybackCessationMode,
+  PlaybackMethod,
+  ProductionQuality,
+  SlotPosition,
+  VolumeNormalizationMode,
+} from "iab-adcom";
 
 /**
  * Describes the nature and behavior of the entity that is the source of the bid request

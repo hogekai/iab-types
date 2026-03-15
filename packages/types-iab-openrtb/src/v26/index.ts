@@ -1,6 +1,15 @@
-import { NoBidReasonCode } from "../v30/enum";
-import { App, Device, DOOH, Imp, Regs, Site, Source, User } from "./BidRequest";
-import { SeatBid } from "./BidResponse";
+import type { NoBidReasonCode } from "../v30/enum";
+import type {
+  App,
+  Device,
+  DOOH,
+  Imp,
+  Regs,
+  Site,
+  Source,
+  User,
+} from "./BidRequest";
+import type { SeatBid } from "./BidResponse";
 
 export interface BidRequest {
   /**

@@ -1,8 +1,7 @@
-import { ContentContext } from "iab-adcom";
-import { Item, Source } from "./Request";
-import { Seatbid } from "./Response";
-import { NoBidReasonCode } from "./enum";
-import { Context } from "iab-adcom/context";
+import type { Context } from "iab-adcom/context";
+import type { NoBidReasonCode } from "./enum";
+import type { Item, Source } from "./Request";
+import type { Seatbid } from "./Response";
 
 export interface Openrtb {
   /**
@@ -21,14 +20,14 @@ export interface Openrtb {
   domainver: string;
 
   /**
-   * Bid request container. * Required only for request payloads. Refer to Object: Request.
+   * Bid request container. Required only for request payloads. Refer to Object: Request.
    */
-  request: Request;
+  request?: Request;
 
   /**
-   * Bid response container. * Required only for response payloads. Refer to Object: Response.
+   * Bid response container. Required only for response payloads. Refer to Object: Response.
    */
-  response: Response;
+  response?: Response;
 }
 
 export interface Request {
@@ -163,6 +162,6 @@ export interface Response {
   ext?: Record<string, unknown>;
 }
 
+export * from "./enum";
 export * from "./Request";
 export * from "./Response";
-export * from "./enum";

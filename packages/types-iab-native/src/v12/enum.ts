@@ -10,7 +10,7 @@ export const ContextType = {
   PRODUCT: 3,
 } as const;
 
-export type ContextType = typeof ContextType[keyof typeof ContextType];
+export type ContextType = (typeof ContextType)[keyof typeof ContextType];
 
 /**
  * Context SubType IDs - Next-level context in which the ad appears
@@ -42,7 +42,8 @@ export const ContextSubType = {
   REVIEWS: 32,
 } as const;
 
-export type ContextSubType = typeof ContextSubType[keyof typeof ContextSubType];
+export type ContextSubType =
+  (typeof ContextSubType)[keyof typeof ContextSubType];
 
 /**
  * Placement Type IDs - The format of the ad you are purchasing
@@ -58,7 +59,7 @@ export const PlacementType = {
   RECOMMENDATION_WIDGET: 4,
 } as const;
 
-export type PlacementType = typeof PlacementType[keyof typeof PlacementType];
+export type PlacementType = (typeof PlacementType)[keyof typeof PlacementType];
 
 /**
  * Data Asset Types - Common asset element types of native advertising
@@ -90,7 +91,7 @@ export const DataAssetType = {
   CTA_TEXT: 12,
 } as const;
 
-export type DataAssetType = typeof DataAssetType[keyof typeof DataAssetType];
+export type DataAssetType = (typeof DataAssetType)[keyof typeof DataAssetType];
 
 /**
  * Image Asset Types - Common image asset element types
@@ -102,7 +103,8 @@ export const ImageAssetType = {
   MAIN: 3,
 } as const;
 
-export type ImageAssetType = typeof ImageAssetType[keyof typeof ImageAssetType];
+export type ImageAssetType =
+  (typeof ImageAssetType)[keyof typeof ImageAssetType];
 
 /**
  * Event Types - Types of events that can be tracked
@@ -118,7 +120,7 @@ export const EventType = {
   VIEWABLE_VIDEO_50: 4,
 } as const;
 
-export type EventType = typeof EventType[keyof typeof EventType];
+export type EventType = (typeof EventType)[keyof typeof EventType];
 
 /**
  * Event Tracking Methods - Methods available for tracking events
@@ -130,4 +132,5 @@ export const EventTrackingMethod = {
   JS: 2,
 } as const;
 
-export type EventTrackingMethod = typeof EventTrackingMethod[keyof typeof EventTrackingMethod];
+export type EventTrackingMethod =
+  (typeof EventTrackingMethod)[keyof typeof EventTrackingMethod];

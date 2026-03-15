@@ -1,4 +1,4 @@
-import { Ad } from "iab-adcom/media";
+import type { Ad } from "iab-adcom/media";
 
 /**
  * Represents a collection of bids from a specific buyer seat

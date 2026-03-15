@@ -2,7 +2,7 @@
  * The Placement group includes objects that define the set of allowed ads for a given impression. This can include mechanical information (e.g., sizes, supported mime types and other rendering options), placement details and positioning, various restrictions lists (e.g., advertiser domains, content categories), and more.
  * @see https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#placement-objects-
  */
-import {
+import type {
   APIFramework,
   AudioVideoCreativeSubtype,
   ClickType,
@@ -598,7 +598,7 @@ export interface VideoPlacement {
    * Precise acceptable durations for video creatives in seconds
    * @minimum 0
    */
-  rqddur?: number[];
+  rqddurs?: number[];
 
   /**
    * Maximum extended creative duration
@@ -801,7 +801,7 @@ export interface AudioPlacement {
    * Precise acceptable durations in seconds
    * @minimum 0
    */
-  rqddur?: number[];
+  rqddurs?: number[];
 
   /**
    * Maximum extended creative duration
