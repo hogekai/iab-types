@@ -2,9 +2,8 @@ name: Release
 
 on:
   push:
-    branches: [main]
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+    tags:
+      - "iab-*@*"
 
 jobs:
   release:
