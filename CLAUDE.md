@@ -46,6 +46,7 @@ pnpm test         # vitest 型テスト実行（typecheck 有効。expectTypeOf 
 ## Versioning
 
 - changesets で管理（`npx changeset` → `npx changeset version`）
+- changeset・CHANGELOG・コミットメッセージは英語で書く（CHANGELOG がそのまま npm / GitHub Release のリリースノートになるため）
 - リリース: `/prep-release` で version コミット + `<package>@<version>` タグを作成 → `git push --follow-tags`
   - タグ push で `.github/workflows/release.yml` が npm publish（provenance 付き）と GitHub Release 作成を行う
   - タグは必ずパッケージ名付き（`iab-openrtb@2.2.0`）。パッケージ名なしの `1.0.0` のようなタグは作らない

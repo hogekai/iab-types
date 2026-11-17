@@ -21,45 +21,45 @@
 
   #### Bug Fixes
 
-  - `DeliveryMethod` に `as const` が抜けていたのを修正（型推論が `number` になっていた）
-  - `Display.api` を `APIFramework` → `APIFramework[]` に修正（配列であるべき）
-  - `Display.ctype` を `number` → `DisplayCreativeSubtype` に修正
+  - Add the missing `as const` to `DeliveryMethod` (its values were inferred as `number`)
+  - Change `Display.api` from `APIFramework` to `APIFramework[]` (it is an array)
+  - Change `Display.ctype` from `number` to `DisplayCreativeSubtype`
 
   #### Spec Reconciliation (AdCOM v1.0)
 
-  - `Content` に `genres`, `gtax` フィールド追加
-  - `Data` に `cids` フィールド追加
-  - `ExtendedIdentifier` に `inserter`, `matcher`, `mm` フィールド追加
-  - `Regs` に `gpp`, `gpp_sid` フィールド追加
-  - `Restrictions` に `acat` フィールド追加
-  - `VideoPlacement` / `AudioPlacement` の `rqddur` → `rqddurs` に修正
-  - `CategoryTaxonomy` に値 9 (Content Taxonomy 3.1) 追加
-  - `IPLocationService` に値 511, 512 (51Degrees) 追加
-  - `PodDeduplicationSetting` に値 5 (No deduplication) 追加
+  - Add `genres` and `gtax` to `Content`
+  - Add `cids` to `Data`
+  - Add `inserter`, `matcher` and `mm` to `ExtendedIdentifier`
+  - Add `gpp` and `gpp_sid` to `Regs`
+  - Add `acat` to `Restrictions`
+  - Rename `rqddur` to `rqddurs` in `VideoPlacement` / `AudioPlacement`
+  - Add value 9 (Content Taxonomy 3.1) to `CategoryTaxonomy`
+  - Add values 511 and 512 (51Degrees) to `IPLocationService`
+  - Add value 5 (No deduplication) to `PodDeduplicationSetting`
 
   ### iab-openrtb
 
   #### Bug Fixes
 
-  - v2.5 `Bid.qagmediarating` を `ImageSmoothingQuality` → `MediaRating` に修正
+  - Change v2.5 `Bid.qagmediarating` from `ImageSmoothingQuality` to `MediaRating`
 
   #### Spec Reconciliation (OpenRTB v2.6)
 
-  - `Imp.qty` を `Record<string, unknown>` → `Qty` に修正
-  - `Imp.refresh` を `Record<string, unknown>` → `Refresh` に修正
-  - `Site.content` / `App.content` を `Record<string, unknown>` → `Content` に修正
-  - `Video.durfloors` / `Audio.durfloors` / `Deal.durfloors` を `DurFloors[]` に修正
-  - `Content` に `genres`, `gtax` フィールド追加
-  - `Data` に `cids` フィールド追加
-  - `BrandVersion.version` を `string` → `string[]` に修正
+  - Change `Imp.qty` from `Record<string, unknown>` to `Qty`
+  - Change `Imp.refresh` from `Record<string, unknown>` to `Refresh`
+  - Change `Site.content` / `App.content` from `Record<string, unknown>` to `Content`
+  - Change `Video.durfloors` / `Audio.durfloors` / `Deal.durfloors` to `DurFloors[]`
+  - Add `genres` and `gtax` to `Content`
+  - Add `cids` to `Data`
+  - Change `BrandVersion.version` from `string` to `string[]`
 
   #### Spec Reconciliation (OpenRTB v3.0)
 
-  - `Openrtb.request` / `response` を optional に修正（条件付き必須）
+  - Make `Openrtb.request` / `response` optional (they are conditionally required)
 
   ### iab-native
 
   #### Bug Fixes
 
-  - package.json の description typo 修正 ("fro" → "for")
-  - package.json の repository.directory パス修正
+  - Fix a typo in the package.json description ("fro" → "for")
+  - Fix the `repository.directory` path in package.json
