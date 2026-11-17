@@ -1,5 +1,12 @@
 # iab-openrtb
 
+## 2.2.0
+
+### Minor Changes
+
+- f9f0264: v2.6 `Content` gains `realtime` and `firstbroadcast`, and `livestream`'s description follows its new meaning (scheduled vs not scheduled), from OpenRTB 2.6-202606. The spec copy in `specs/` is updated to match.
+- 02368c9: v2.6 `SupplyChain.complete` accepts `2` (payment and tech complete), from SupplyChain 1.1.
+
 ## 2.1.0
 
 ### Minor Changes
