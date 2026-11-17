@@ -633,7 +633,10 @@ export interface Content {
   keywords?: string;
   /** Array of keywords */
   kwarray?: string[];
-  /** Live content flag */
+  /**
+   * Method of broadcast: 0 = not scheduled (e.g. VOD or otherwise user initiated),
+   * 1 = scheduled (linear viewing). Before OpenRTB 2.6-202606: 0 = not live, 1 = live.
+   */
   livestream?: 0 | 1;
   /** Source relationship indicator */
   sourcerelationship?: 0 | 1;
@@ -655,6 +658,10 @@ export interface Content {
   network?: Network;
   /** Channel details */
   channel?: Channel;
+  /** Whether the event is happening in real time as it is watched: 0 = no (e.g. a replay), 1 = yes (e.g. a live game) */
+  realtime?: 0 | 1;
+  /** Whether this broadcast is the first time the content is available to an audience: 0 = no, 1 = yes */
+  firstbroadcast?: 0 | 1;
   /** Extension field */
   ext?: Record<string, unknown>;
 }
