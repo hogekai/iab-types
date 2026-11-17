@@ -27,7 +27,7 @@ pnpm typecheck    # TypeScript 型チェック
 pnpm lint         # Biome lint
 pnpm lint:fix     # Biome lint + auto-fix
 pnpm format       # Biome format
-pnpm test         # vitest 型テスト実行
+pnpm test         # vitest 型テスト実行（typecheck 有効。expectTypeOf の不一致で失敗する）
 ```
 
 ## Build
@@ -46,6 +46,9 @@ pnpm test         # vitest 型テスト実行
 ## Versioning
 
 - changesets で管理（`npx changeset` → `npx changeset version`）
+- リリース: `/prep-release` で version コミット + `<package>@<version>` タグを作成 → `git push --follow-tags`
+  - タグ push で `.github/workflows/release.yml` が npm publish（provenance 付き）と GitHub Release 作成を行う
+  - タグは必ずパッケージ名付き（`iab-openrtb@2.2.0`）。パッケージ名なしの `1.0.0` のようなタグは作らない
 - 破壊的変更（フィールド名変更、型変更）は major bump
 - フィールド追加のみは minor bump
 
