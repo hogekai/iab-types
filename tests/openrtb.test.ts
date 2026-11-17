@@ -18,6 +18,13 @@ describe("OpenRTB v2.6", () => {
     expectTypeOf<Complete>().toEqualTypeOf<0 | 1 | 2>();
   });
 
+  it("Content.realtime and Content.firstbroadcast should be 0 | 1 (OpenRTB 2.6-202606)", () => {
+    expectTypeOf<Content["realtime"]>().toEqualTypeOf<0 | 1 | undefined>();
+    expectTypeOf<Content["firstbroadcast"]>().toEqualTypeOf<
+      0 | 1 | undefined
+    >();
+  });
+
   it("Imp.qty should be Qty type", () => {
     expectTypeOf<BidRequest["imp"][0]["qty"]>().toEqualTypeOf<
       Qty | undefined
