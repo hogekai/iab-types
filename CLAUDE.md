@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-IAB Tech Lab の仕様に対する TypeScript 型定義パッケージのモノレポ。
+A monorepo of TypeScript type definition packages for IAB Tech Lab specifications.
 
 - `iab-adcom` — AdCOM v1.0 (Advertising Common Object Model)
 - `iab-openrtb` — OpenRTB v2.5 / v2.6 / v3.0
@@ -12,49 +12,49 @@ IAB Tech Lab の仕様に対する TypeScript 型定義パッケージのモノ�
 
 ```
 packages/
-  types-iab-adcom/     # AdCOM 型定義 + enum（ランタイム値）
-  types-iab-openrtb/   # OpenRTB 型定義（iab-adcom に依存）
-  types-iab-native/    # Native Ad 型定義
-specs/                 # IAB 仕様書（照合用）
-tests/                 # vitest 型テスト
+  types-iab-adcom/     # AdCOM types + enums (runtime values)
+  types-iab-openrtb/   # OpenRTB types (depends on iab-adcom)
+  types-iab-native/    # Native Ad types
+specs/                 # IAB spec documents (for cross-checking)
+tests/                 # vitest type tests
 ```
 
 ## Commands
 
 ```bash
-pnpm build        # 全パッケージビルド
-pnpm typecheck    # TypeScript 型チェック
+pnpm build        # Build all packages
+pnpm typecheck    # TypeScript type check
 pnpm lint         # Biome lint
 pnpm lint:fix     # Biome lint + auto-fix
 pnpm format       # Biome format
-pnpm test         # vitest 型テスト実行（typecheck 有効。expectTypeOf の不一致で失敗する）
+pnpm test         # Run vitest type tests (typecheck enabled; fails on expectTypeOf mismatches)
 ```
 
 ## Build
 
-- **iab-adcom**: `tsup && tsc --emitDeclarationOnly`（namespace の `export import` パターンを tsup の dts が未対応のため tsc 併用）
-- **iab-openrtb / iab-native**: `tsup`（`dts: true`）
-- 共通設定は `tsconfig.base.json` に集約
+- **iab-adcom**: `tsup && tsc --emitDeclarationOnly` (tsc is needed because tsup's dts doesn't support the namespace `export import` pattern)
+- **iab-openrtb / iab-native**: `tsup` (`dts: true`)
+- Shared compiler settings live in `tsconfig.base.json`
 
 ## Key Patterns
 
-- enum は `as const` オブジェクト + 同名の type export（ランタイム値とリテラル型を両立）
-- AdCOM は namespace (`AdCOM.Media`, `AdCOM.Context`, `AdCOM.Placement`) で構造化
-- OpenRTB はバージョン別エントリ (`iab-openrtb/v25`, `/v26`, `/v30`)
-- すべてのインターフェースに `ext?: Record<string, unknown>` を持つ（IAB 仕様の拡張規約）
+- Enums are `as const` objects plus a type export of the same name (gives both runtime values and literal types)
+- AdCOM is organized into namespaces (`AdCOM.Media`, `AdCOM.Context`, `AdCOM.Placement`)
+- OpenRTB has per-version entry points (`iab-openrtb/v25`, `/v26`, `/v30`)
+- Every interface has `ext?: Record<string, unknown>` (the IAB extension convention)
 
 ## Versioning
 
-- changesets で管理（`npx changeset` → `npx changeset version`）
-- changeset・CHANGELOG・コミットメッセージは英語で書く（CHANGELOG がそのまま npm / GitHub Release のリリースノートになるため）
-- リリース: `/prep-release` で version コミット + `<package>@<version>` タグを作成 → `git push --follow-tags`
-  - タグ push で `.github/workflows/release.yml` が npm publish（provenance 付き）と GitHub Release 作成を行う
-  - タグは必ずパッケージ名付き（`iab-openrtb@2.2.0`）。パッケージ名なしの `1.0.0` のようなタグは作らない
-- 破壊的変更（フィールド名変更、型変更）は major bump
-- フィールド追加のみは minor bump
+- Managed with changesets (`npx changeset` → `npx changeset version`)
+- Write changesets, CHANGELOG entries and commit messages in English (the CHANGELOG becomes the npm / GitHub Release notes as is)
+- Release: `/prep-release` creates the version commit and `<package>@<version>` tags → `git push --follow-tags`
+  - Pushing a tag runs `.github/workflows/release.yml`, which publishes to npm (with provenance) and creates the GitHub Release
+  - Tags always include the package name (`iab-openrtb@2.2.0`). Never create bare tags like `1.0.0`
+- Breaking changes (renamed fields, changed types) are a major bump
+- Adding fields only is a minor bump
 
 ## Type Accuracy
 
-- 型定義は `specs/` 内の仕様書に準拠
-- 変更時は該当スペックと照合すること
-- deprecated フィールドはスペックに存在しても省略可（意図的な設計判断）
+- Type definitions follow the spec documents in `specs/`
+- Check changes against the relevant spec
+- Deprecated fields may be omitted even if they are still in the spec (an intentional design decision)
