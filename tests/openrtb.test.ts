@@ -11,6 +11,13 @@ import type {
 import type { Openrtb } from "../packages/types-iab-openrtb/src/v30/index";
 
 describe("OpenRTB v2.6", () => {
+  it("SupplyChain.complete should allow 2 (payment and tech complete, SupplyChain 1.1)", () => {
+    type Complete = NonNullable<
+      NonNullable<BidRequest["source"]>["schain"]
+    >["complete"];
+    expectTypeOf<Complete>().toEqualTypeOf<0 | 1 | 2>();
+  });
+
   it("Content.realtime and Content.firstbroadcast should be 0 | 1 (OpenRTB 2.6-202606)", () => {
     expectTypeOf<Content["realtime"]>().toEqualTypeOf<0 | 1 | undefined>();
     expectTypeOf<Content["firstbroadcast"]>().toEqualTypeOf<

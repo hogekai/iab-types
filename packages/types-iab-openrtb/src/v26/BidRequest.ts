@@ -716,8 +716,12 @@ export interface Channel {
  * Represents the supply chain of inventory transaction
  */
 export interface SupplyChain {
-  /** Indicates if chain contains all nodes */
-  complete: 0 | 1;
+  /**
+   * Whether the chain contains all nodes back to the owner of the inventory:
+   * 0 = not complete, 1 = payment complete, 2 = payment and tech complete
+   * (SupplyChain 1.1, which also lists hp=0 nodes that take custody of the request).
+   */
+  complete: 0 | 1 | 2;
   /** Array of supply chain nodes */
   nodes: SupplyChainNode[];
   /** Supply chain specification version */
