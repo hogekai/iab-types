@@ -5,6 +5,12 @@ on:
     tags:
       - "iab-*@*"
 
+# Several package tags are usually pushed at once; run them one at a time so
+# `changeset publish` never races itself.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -27,6 +33,29 @@ jobs:
       - run: pnpm build
 
       - name: Publish to npm
+        # Publishes every workspace package whose version is not on npm yet.
+        # Already-published versions are skipped, so re-runs are safe.
         run: npx changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          pkg="${TAG%@*}"
+          version="${TAG##*@}"
+          dir="$(grep -l "\"name\": \"${pkg}\"" packages/*/package.json | xargs dirname)"
+          # The CHANGELOG section for this version, without its "## x.y.z" heading.
+          awk -v v="$version" '
+            $0 == "## " v { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' "${dir}/CHANGELOG.md" > notes.md
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "Release $TAG already exists; skipping."
+          else
+            gh release create "$TAG" --title "$TAG" --notes-file notes.md --verify-tag
+          fi

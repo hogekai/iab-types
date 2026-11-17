@@ -20,6 +20,8 @@
 
 ## 2.0.0
 
+> **Note:** iab-openrtb@2.0.0 was never published to npm. Its changes first shipped in 2.1.0.
+
 ### Major Changes
 
 - 27255c2: ### iab-adcom

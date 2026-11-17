@@ -13,6 +13,8 @@
 
 ## 2.0.0
 
+> **Note:** iab-adcom@2.0.0 was never published to npm. Its changes first shipped in 2.0.1.
+
 ### Major Changes
 
 - 27255c2: ### iab-adcom
